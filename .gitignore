@@ -3,3 +3,4 @@
 /app/logs/
 /vendor/
 /nbproject/
+.DS_Store
