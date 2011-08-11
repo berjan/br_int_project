@@ -282,8 +282,13 @@ form
             top: 0
             left: 0
             width: 200px
+            font-size: 10px
+            text-shadow: #fff 0 1px 0
+            .ui-datepicker-title
+                text-shadow: #000 0 1px 0
         .boxSettings
-            margin-left: 220px
+            margin: 0 0 0 220px
+            padding-top: 10px
             .fldSlider
                 width: 100%
                 .labels
@@ -348,7 +353,8 @@ form
                 weight: 400
                 size: 12px
             float: right
-
+        &:after
+            content: "."
     .entries
         margin-top: 20px
         table

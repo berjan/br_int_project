@@ -274,9 +274,14 @@ form {
     position: absolute;
     top: 0;
     left: 0;
-    width: 200px; }
+    width: 200px;
+    font-size: 10px;
+    text-shadow: white 0 1px 0; }
+    .timetrack .fsNieuw .boxCalendar .ui-datepicker-title {
+      text-shadow: black 0 1px 0; }
   .timetrack .fsNieuw .boxSettings {
-    margin-left: 220px; }
+    margin: 0 0 0 220px;
+    padding-top: 10px; }
     .timetrack .fsNieuw .boxSettings .fldSlider {
       width: 100%; }
       .timetrack .fsNieuw .boxSettings .fldSlider .labels {
@@ -358,6 +363,8 @@ form {
     font-weight: 400;
     font-size: 12px;
     float: right; }
+  .timetrack .fsSubmit:after {
+    content: "."; }
 .timetrack .entries {
   margin-top: 20px; }
   .timetrack .entries table {
