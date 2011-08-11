@@ -1,0 +1,19 @@
+{% extends "::layout.html.twig" %}
+
+
+
+
+
+  {% block body %}
+<div class="wrapper rounded5 boxed">
+    <div class="content timetrack">
+        <form action="{{ path('BruensCompanyBundle_new') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_row(form.name) }}
+
+
+
+            <input type="submit" value="Opslaan" />
+        </form>
+    </div>
+</div>
+{% endblock %}

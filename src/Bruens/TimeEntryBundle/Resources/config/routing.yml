@@ -1,0 +1,3 @@
+BruensTimeEntryBundle_homepage:
+    pattern:  /{_locale}/time
+    defaults: { _controller: BruensTimeEntryBundle:Default:index }

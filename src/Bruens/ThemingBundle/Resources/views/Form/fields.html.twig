@@ -1,0 +1,46 @@
+{# empty Twig template 
+ this file has been made to override standard ways of rendering of form elements
+
+I copied the original rendering and form theming from Git they are called form_div_layout.html.twig and form_table_layout.html.twig
+
+You can copy parts of these elements on this page and they will be globally rendered the way they are presented over here.
+
+{% form_theme form _self %} will provide locally override the global settings presented here.
+
+Copied from their website: http://symfony.com/doc/current/book/forms.html#form-template-blocks
+label	(e.g. field_label)	renders the field's label
+widget	(e.g. field_widget)	renders the field's HTML representation
+errors	(e.g. field_errors)	renders the field's errors
+row	(e.g. field_row)	renders the field's entire row (label, widget & errors)
+
+In Twig, every block needed is defined in a single template file (form_div_layout.html.twig) that lives inside the Twig Bridge. Inside this file, you can see every block needed to render a form and every default field type. This is now available in the same directory!
+
+
+
+#}
+{% block text_widget %}
+    <div class="string_widget">
+        {% set type = type|default('text') %}
+        {{ block('field_widget') }}
+    </div>
+{% endblock %}
+
+{% block field_widget %}
+    {% set type = type|default('text') %}
+    <p>Field widget</p>
+    <input type="{{ type }}" {{ block('widget_attributes') }} value="{{ value }}" />
+{% endblock field_widget %}
+
+{% block text_label %}
+   <h1>Text Label</h1>
+{% endblock %}
+
+{% block field_row %}
+{% spaceless %}
+    <div class="field_row">
+        {{ form_label(form, label|default(null)) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock field_row %}

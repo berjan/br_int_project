@@ -1,0 +1,9 @@
+BruensCompanyBundle_homepage:
+    pattern:  /{_locale}/company
+    defaults: { _controller: BruensCompanyBundle:Default:index }
+BruensCompanyBundle_new:
+  pattern: /{_locale}/company/new
+  defaults: { _controller: BruensCompanyBundle:Default:new }
+BruensCompanyBundle_success:
+  pattern: /{_locale}/company/success
+  defaults: { _controller: BruensCompanyBundle:Default:success }

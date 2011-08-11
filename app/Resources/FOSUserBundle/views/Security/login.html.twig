@@ -1,0 +1,27 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error }}</div>
+{% endif %}
+   
+
+     <div class="login boxed rounded5">
+          <form action="{{ path("fos_user_security_check") }}" method="post">
+            <label for="username">Gebruikersnaam
+    <input type="text" id="username" name="_username" value="{{ last_username }}" /></label>
+
+    <label for="password">Wachtwoord
+    <input type="password" id="password" name="_password" /></label>
+
+    
+    <!--<label for="remember_me">
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    Onthoud wachtwoord
+    </label>
+    -->
+<label>
+    <input type="submit" id="_submit" name="_submit" value="Inloggen" class="button rounded5"/></label>
+          </form>
+        </div>
+{% endblock fos_user_content %}

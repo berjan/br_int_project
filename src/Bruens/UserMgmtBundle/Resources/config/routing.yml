@@ -1,0 +1,3 @@
+BruensUserMgmtBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BruensUserMgmtBundle:Default:index }

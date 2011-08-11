@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />        
+        {% block stylesheets %}
+        <link href="{{asset('css/compiled.css')}}" rel="stylesheet" type="text/css">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="head">
+                <div class="logo">
+                    <a href="{{ path('BruensDashboardBundle_homepage') }}"><img src="{{asset('images/logo.jpg') }}"></a>
+                </div>
+                <div class="powernav">
+                    <a class="button rounded5" href="#">Berjan Bruens</a>
+                </div>
+            </div>
+                {% block head_navigation %}{% endblock %}
+
+            
+            
+            <div class="main">
+            {% block left_navigation %}{% endblock %}
+            
+        {% block body %}{% endblock %}
+            </div>
+            <div class="foot">
+                © 2011 Bruens IT. Alle rechten voorbehouden. Design by 
+                <a href="http://www.stamkracht.com/" target="_blank">Stamkracht</a>
+            </div>
+
+        </div>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

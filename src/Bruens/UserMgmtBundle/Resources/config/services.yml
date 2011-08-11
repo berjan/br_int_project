@@ -1,0 +1,7 @@
+parameters:
+#    bruens_user_mgmt.example.class: Bruens\UserMgmtBundle\Example
+
+services:
+#    bruens_user_mgmt.example:
+#        class: %bruens_user_mgmt.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

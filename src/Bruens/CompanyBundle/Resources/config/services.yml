@@ -1,0 +1,7 @@
+parameters:
+#    bruens_company.example.class: Bruens\CompanyBundle\Example
+
+services:
+#    bruens_company.example:
+#        class: %bruens_company.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,7 @@
+parameters:
+#    bruens_dashboard.example.class: Bruens\DashboardBundle\Example
+
+services:
+#    bruens_dashboard.example:
+#        class: %bruens_dashboard.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

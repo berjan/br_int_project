@@ -1,0 +1,5 @@
+BruensDashboardBundle_homepage:
+    pattern:  /{_locale}/dashboard
+    defaults: { _controller: BruensDashboardBundle:Default:index, _locale: nl }
+    requirements:
+      _locale: en|nl

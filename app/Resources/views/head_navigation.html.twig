@@ -1,0 +1,19 @@
+
+
+{% block head_navigation %}
+<div class="navigation rounded5 boxed">
+                <ul>
+                    <li><a class="button" href="{{ path('BruensCompanyBundle_new') }}">+ {% trans from "navigation" %}company{% endtrans %}</a></li>
+                    <li><a class="button" href="#">+ Factuur</a></li>
+                    <li><a class="button" href="#">+ Gebruiker</a></li>
+                    <li><a class="button" href="{{ path('BruensTimeEntryBundle_homepage') }}">+ Tijdopgaaf</a></li>
+                    <li><a class="button" href="#">+ Project</a></li>
+                    <li><a class="button" href="#">+ Taak</a></li>
+                    <li><a class="button" href="#">+ Gebruiker</a></li>
+                    <li><a class="button" href="#">+ Tijdopgaaf</a></li>
+                    <li><a class="button" href="#">+ Project</a></li>
+                    <li><a class="button" href="#">+ Taak</a></li>
+                </ul>
+                <div class="expander">Show all</div>
+            </div>
+{% endblock %}

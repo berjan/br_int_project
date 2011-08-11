@@ -1,0 +1,7 @@
+parameters:
+#    bruens_flex_connect.example.class: Bruens\FlexConnectBundle\Example
+
+services:
+#    bruens_flex_connect.example:
+#        class: %bruens_flex_connect.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
