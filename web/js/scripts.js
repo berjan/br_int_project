@@ -26,17 +26,11 @@ var bruens = {
    */
   getCalendars: function() {
     $('.boxCalendar').datepicker({
-<<<<<<< HEAD
+
       dateFormat: 'dd-mm-yy', // format 23-11-2011
       onSelect:   function(dateText, inst) { //when a date is selected, populate the date-field
-        $(this).parent().find('.fldDate input').val(dateText);
-=======
-      dateFormat: 'dd-mm-yy',
-      onSelect:   function(dateText, inst) {
-        $('.fsNieuw').find('.fldDate input').val(dateText);
-        //Write some specific test jquery...maybe move it to a specific bundle
-        
->>>>>>> -made time entries functional
+        $(this).find('.fldDate input').val(dateText);
+
       }
     });
   }
