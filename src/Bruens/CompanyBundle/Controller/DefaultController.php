@@ -34,15 +34,19 @@ class DefaultController extends Controller {
             if ($form->isValid()) {
                 $company = $form->getData();
                 // perform some action, such as saving the task to the database
+                // 
+               $user = $this->get('security.context')->getToken()->getUser();
                 $em = $this->getDoctrine()->getEntityManager();
-                $em->persist($company);
-                $em->flush();
-                 return $this->redirect($this->generateUrl('BruensCompanyBundle_success'));
+                $test = $em->getRepository('BruensCompanyBundle:Company')
+                        ->save($company, $user);
+//                $em->persist($company);
+//                $em->flush();
+                 //return $this->redirect($this->generateUrl('BruensCompanyBundle_success'));
             }else{
                 echo "form is not valid";
             }
         }
-        return $this->render('BruensCompanyBundle:Default:index.html.twig', array(
+        return $this->render('BruensCompanyBundle:Default:new.html.twig', array(
                     'form' => $form->createView(),
                 ));
         //return $this->render('BruensCompanyBundle:Default:new.html.twig');

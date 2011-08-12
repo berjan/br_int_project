@@ -44,10 +44,15 @@
                 </div>
 
               </div>
-              <div class="fsFilter">Filters</div>              
+              <div class="fsFilter">Filters</div> 
+              <div>
+                  {% for label in labels %}
+                      {{ label }}
+                  {% endfor %}
+              </div>    
             </form>
             
-            <form action="#" method="post">
+            <form name="myform" action="{{ path('BruensTimeEntryBundle_homepage') }}" method="post" {{ form_enctype(form) }}>
               <h2>Nieuwe tijdsopgaaf</h2>
               <div class="fsNieuw">
                 <div class="boxCalendar"></div>
@@ -70,22 +75,25 @@
                     </div>
                   </div>
                   <div class="fldDateTime">
-                    <div class="fldDate">
-                      <input value="5 augustus 2011">
-                    </div>
+                    {{ form_widget(form.date_entry) }}
                     <div class="fldTime">
-                      van <input value="8:00"> tot <input value="10:00">
+                      van {{ form_widget(form.off) }} tot {{ form_widget(form.till) }}
                     </div>
                   </div>
                   <div class="fldDescription">
-                    <textarea>lalala omschrijving</textarea>
+                    {{ form_widget(form.description) }}
                   </div>
                 </div>
               </div>
               <div class="fsSubmit">
-                <a href="#" class="button rounded5">Knoppie!</a>
+                <a href="javascript: submitform()" class="button rounded5">Opslaan</a>
               </div>
-                
+                <script type="text/javascript">
+function submitform()
+{
+  document.myform.submit();
+}
+</script>
             </form>
             
             <div class="entries">

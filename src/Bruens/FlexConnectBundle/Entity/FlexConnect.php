@@ -34,6 +34,11 @@ class FlexConnect {
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $users;
+    /**
+     * @ORM\ManyToOne(targetEntity="Bruens\TimeEntryBundle\Entity\TimeEntry", inversedBy="flex_connects")
+     * @ORM\JoinColumn(name="time_entry_id", referencedColumnName="id")
+     */
+    protected $time_entries;
 
 
     public function __construct()
@@ -49,6 +54,11 @@ class FlexConnect {
     protected $id;
   
     
+    /**
+     *
+     * @ORM\Column(type="integer")
+     */
+    protected $type;
   
 
     /**
@@ -101,5 +111,50 @@ class FlexConnect {
     public function getUsers()
     {
         return $this->users;
+    }
+
+    
+
+    /**
+     * Set type
+     *
+     * @param integer $type
+     * Types:
+     * 1 => created
+     * 2 => updated
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Get type
+     *
+     * @return integer 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set time_entries
+     *
+     * @param Bruens\TimeEntryBundle\Entity\TimeEntry $timeEntries
+     */
+    public function setTimeEntries(\Bruens\TimeEntryBundle\Entity\TimeEntry $timeEntries)
+    {
+        $this->time_entries = $timeEntries;
+    }
+
+    /**
+     * Get time_entries
+     *
+     * @return Bruens\TimeEntryBundl\Entity\TimeEntry 
+     */
+    public function getTimeEntries()
+    {
+        return $this->time_entries;
     }
 }

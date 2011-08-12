@@ -37,6 +37,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        
         $this->flex_connects = new ArrayCollection();
         // your own logic
     }

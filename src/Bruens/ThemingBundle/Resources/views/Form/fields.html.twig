@@ -27,7 +27,7 @@ In Twig, every block needed is defined in a single template file (form_div_layou
 
 {% block field_widget %}
     {% set type = type|default('text') %}
-    <p>Field widget</p>
+    
     <input type="{{ type }}" {{ block('widget_attributes') }} value="{{ value }}" />
 {% endblock field_widget %}
 
@@ -44,3 +44,42 @@ In Twig, every block needed is defined in a single template file (form_div_layou
     </div>
 {% endspaceless %}
 {% endblock field_row %}
+
+{# Must be in a class called fsNieuw and the class boxCalendar can be used as
+ displaying the calendar. This calendar is able to interact with the input field
+ In the scripts.js in the root web folder the JQuery UI library is initialized
+#}   
+{% block date_widget %}
+{% spaceless %}
+   
+   {% if widget == 'single_text' %}
+   <div class="fldDate">
+        {{ block('field_widget') }}
+           </div>
+    {% else %}
+    <div class="fldDate">
+                      
+                    
+     <input type="date" {{ block('attributes') }} value="{{ value }}" id="{{ id }}" name="{{ full_name }}"/>    
+          </div> 
+  {% endif %}
+{% endspaceless %}
+   
+{% endblock date_widget %}
+   
+{% block time_widget %}
+{% spaceless %}
+   
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    
+        
+    {% else %}
+        <div {{ block('widget_container_attributes') }}>
+            {{ form_widget(form.hour, { 'attr': { 'size': '1' } }) }}:{{ form_widget(form.minute, { 'attr': { 'size': '1' } }) }}{% if with_seconds %}:{{ form_widget(form.second, { 'attr': { 'size': '1' } }) }}{% endif %}
+        </div>
+    {% endif %}
+
+  {# <input type="time" value="{{ value }}" id="{{ id }}" name="{{ full_name }}"/>   #}
+{% endspaceless %}
+{% endblock time_widget %}
